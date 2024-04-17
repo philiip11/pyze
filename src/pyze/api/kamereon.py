@@ -205,7 +205,7 @@ class Vehicle(object):
             return raw_mode
 
     def mileage(self):
-        return self._get('cockpit', 2)
+        return self._get('cockpit', 1)
 
     # Not (currently) implemented server-side
     def lock_status(self):
