@@ -21,10 +21,11 @@ def _parse_schedule(data):
     schedule = {}
     for day in DAYS:
         if day in data:
-            schedule[day] = ScheduledCharge(
-                data[day]['startTime'],
-                data[day]['duration']
-            )
+            if data[day] is not None:
+                schedule[day] = ScheduledCharge(
+                    data[day]['startTime'],
+                    data[day]['duration']
+                )
 
     return data.get('id'), data.get('activated', False), schedule
 
